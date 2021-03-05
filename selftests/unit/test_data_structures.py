@@ -107,7 +107,7 @@ class TestDataStructures(unittest.TestCase):
 
 class TestDataSize(unittest.TestCase):
 
-    def test_valid(self):
+    def test_valid(self):  # pylint: disable=R0201
         data_structures.DataSize('0')
         data_structures.DataSize('0t')
         data_structures.DataSize('10')

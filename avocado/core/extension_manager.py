@@ -70,7 +70,8 @@ class ExtensionManager:
                     self.extensions.append(ext)
         self.extensions.sort(key=lambda x: x.name)
 
-    def enabled(self, extension):  # pylint: disable=W0613
+    @staticmethod
+    def enabled(extension):  # pylint: disable=W0613
         """
         Checks if a plugin is enabled
 

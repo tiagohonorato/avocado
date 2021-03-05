@@ -44,6 +44,7 @@ class TestSubProcess(unittest.TestCase):
         self.assertRaises(ValueError, process.SubProcess,
                           FICTIONAL_CMD, False, "invalid")
 
+    # pylint: disable=R0201
     @unittest.mock.patch('avocado.utils.process.SubProcess._init_subprocess')
     @unittest.mock.patch('avocado.utils.process.SubProcess.is_sudo_enabled')
     @unittest.mock.patch('avocado.utils.process.SubProcess.get_pid')
@@ -65,6 +66,7 @@ class TestSubProcess(unittest.TestCase):
                  unittest.mock.call(kill_cmd % (signal, pid), sudo=True)]
         run.assert_has_calls(calls)
 
+    # pylint: disable=R0201
     @unittest.mock.patch('avocado.utils.process.SubProcess._init_subprocess')
     @unittest.mock.patch('avocado.utils.process.SubProcess.is_sudo_enabled')
     @unittest.mock.patch('avocado.utils.process.SubProcess.get_pid')
@@ -622,7 +624,7 @@ class FDDrainerTests(unittest.TestCase):
         self.assertTrue(one_stream_closed)
         fd_drainer.flush()
 
-    def test_flush_on_handler_with_no_fileno(self):
+    def test_flush_on_handler_with_no_fileno(self):  # pylint: disable=R0201
         handler = logging.StreamHandler(io.StringIO())
         log = logging.getLogger("test_flush_on_handler_with_no_fileno")
         log.addHandler(handler)

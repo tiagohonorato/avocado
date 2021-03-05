@@ -20,7 +20,7 @@ class PortTrackerTest(unittest.TestCase):
         ports.is_port_free.assert_called_once_with(22, tracker.address)
         self.assertIn(22, tracker.retained_ports)
 
-    def test_release_port_does_not_poke_system(self):
+    def test_release_port_does_not_poke_system(self):  # pylint: disable=R0201
         tracker = ports.PortTracker()
         tracker.release_port = unittest.mock.MagicMock()
         ports.is_port_free = unittest.mock.MagicMock()

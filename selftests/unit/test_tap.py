@@ -48,7 +48,8 @@ class TapParserTests(unittest.TestCase):
         with self.assertRaises(StopIteration):
             next(events)
 
-    def parse_tap(self, s):
+    @staticmethod
+    def parse_tap(s):
         parser = TapParser(io.StringIO(s))
         return iter(parser.parse())
 

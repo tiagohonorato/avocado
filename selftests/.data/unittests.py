@@ -11,7 +11,8 @@ class Second(unittest.TestCase):
     def test_fail(self):
         self.fail("this is suppose to fail")
 
-    def test_error(self):
+    @staticmethod
+    def test_error():
         raise RuntimeError("This is suppose to error")
 
     @unittest.skip("This is suppose to be skipped")

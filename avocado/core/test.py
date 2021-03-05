@@ -953,7 +953,8 @@ class Test(unittest.TestCase, TestData):
         """
         raise exceptions.TestFail(message)
 
-    def error(self, message=None):  # pylint: disable=W0221
+    @staticmethod
+    def error(message=None):  # pylint: disable=W0221
         """
         Errors the currently running test.
 
@@ -967,7 +968,8 @@ class Test(unittest.TestCase, TestData):
         """
         raise exceptions.TestError(message)
 
-    def cancel(self, message=None):  # pylint: disable=W0221
+    @staticmethod
+    def cancel(message=None):  # pylint: disable=W0221
         """
         Cancels the test.
 
